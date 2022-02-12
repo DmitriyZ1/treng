@@ -16,12 +16,24 @@ const arr =[
 const bl = document.querySelector('.blocks');
 const out = document.querySelector('.out');
 
+bl.addEventListener('click', (e) => {
+    if(e.target.classList.contains('blocks__item')){
+        let id = e.target.id;
+        console.log(id)
+        let n = id.match(/[0-9]+$/);
+        if(n){
+            n = n[0];
+            let value = arr.find((item) => item.id === +n).value;
+            out.innerHTML += `${value} </br>`
+        } 
+    }
+})
+
 function gg(a, parent){
     a.forEach(element => {
         let div = document.createElement('div');
         div.classList.add('blocks__item');
         div.id = `b${element.id}`;
-        div.addEventListener('click', (e) => {outtext(e, element.value, out)} )
         parent.append(div);
     });
 }
