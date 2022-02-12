@@ -15,4 +15,12 @@
     height: 150px;
     border: 1px solid black;
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.blocks__item:hover{
+    transform: rotate(10deg);
 }
